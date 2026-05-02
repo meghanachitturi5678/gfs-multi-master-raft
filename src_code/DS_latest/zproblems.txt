@@ -1,0 +1,39 @@
+
+    def store_chunk(self, client, chunk_id, filename, data, checksum, is_replica=False):
+        """Store chunk data from client, ensuring data integrity."""
+        try:
+            # Extract the base file name without extension
+            print("came to try")
+            base_filename, _ = os.path.splitext(os.path.basename(filename))
+
+            # Generate chunk file name (e.g., abhi_chunk_0.txt)
+            chunk_suffix = "_replica" if is_replica else ""
+            chunk_name = f"{base_filename}_chunk_{chunk_id}{chunk_suffix}.txt"
+            chunk_path = os.path.join(self.base_directory, chunk_name)
+
+            # Check if chunk already exists
+            if os.path.exists(chunk_path):
+                print("came to chunk exists")
+                logging.warning("Chunk %s already exists. Skipping storage.", chunk_name)
+                return {'status': 'error', 'message': 'Chunk already exists'}
+
+            # Verify checksum
+            if self.calculate_checksum(data) != checksum:
+                print("came to checksum error")
+                logging.error("Checksum mismatch for chunk %s, possible data corruption.", chunk_name)
+                return {'status': 'error', 'message': 'Checksum mismatch'}
+
+            # Save the chunk data
+            with open(chunk_path, 'wb') as f:
+                print("came to write")
+                f.write(data)
+
+            logging.info("Stored chunk %s successfully in %s.", chunk_name, chunk_path)
+            self.chunkserver_info.append(chunk_name)
+            return {'status': 'success'}
+        except Exception as e:
+            print("came to except")
+            logging.error("Failed to store chunk %s: %s", chunk_id, e)
+            return {'status': 'error', 'message': str(e)}
+
+that means the code is going to except for all the store commands

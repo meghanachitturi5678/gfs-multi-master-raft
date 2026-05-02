@@ -1,0 +1,89 @@
+   .d_valC(d_valC),
+        .d_valA(d_valA),
+        .d_valB(d_valB),
+        .d_dstE(d_dstE),
+        .d_dstM(d_dstM),
+        .d_srcA(d_srcA),
+        .d_srcB(d_srcB),
+        .reg_file0(reg_file0),
+        .reg_file1(reg_file1),
+        .reg_file2(reg_file2),
+        .reg_file3(reg_file3),
+        .reg_file4(reg_file4),
+        .reg_file5(reg_file5),
+        .reg_file6(reg_file6),
+        .reg_file7(reg_file7),
+        .reg_file8(reg_file8),
+        .reg_file9(reg_file9),
+        .reg_file10(reg_file10),
+        .reg_file11(reg_file11),
+        .reg_file12(reg_file12),
+        .reg_file13(reg_file13),
+        .reg_file14(reg_file14)
+    );
+
+    execute e(
+        .clk(clk),
+
+        // Inputs
+        .E_stat(E_stat),
+        .E_icode(E_icode),
+        .E_ifun(E_ifun),
+        .E_valC(E_valC),
+        .E_valA(E_valA),
+        .E_valB(E_valB),
+        .E_dstE(E_dstE),
+        .E_dstM(E_dstM),
+        .W_stat(W_stat),
+        .m_stat(m_stat),
+
+        // Outputs
+        .e_stat(e_stat),
+        .e_icode(e_icode),
+        .e_Cnd(e_Cnd),
+        .e_valE(e_valE),
+        .e_valA(e_valA),
+        .e_dstE(e_dstE),
+        .e_dstM(e_dstM),
+        .ZF(ZF),
+        .OF(OF),
+        .SF(SF)
+    );
+
+    memory m(
+        .clk(clk),
+
+        // Inputs
+        .M_stat(M_stat),
+        .M_icode(M_icode),
+        .M_valE(M_valE),
+        .M_valA(M_valA),
+        .M_dstE(M_dstE),
+        .M_dstM(M_dstM),
+
+        // Outputs
+        .m_stat(m_stat),
+        .m_icode(m_icode),
+        .m_valE(m_valE),
+        .m_valM(m_valM),
+        .m_dstE(m_dstE),
+        .m_dstM(m_dstM)
+    );
+
+    // Stat Code
+    assign Stat = W_stat;
+
+    // Control Logic
+    wire W_stall, D_stall, F_stall;
+    wire M_bubble, E_bubble, D_bubble;
+
+    PIPE_con pipe_con(
+        // Inputs
+        .D_icode(D_icode),
+        .d_srcA(d_srcA),
+        .d_srcB(d_srcB),
+        .E_icode(E_icode),
+        .E_dstM(E_dstM),
+        .e_Cnd(e_Cnd),
+        .M_icode(M_icode),
+      

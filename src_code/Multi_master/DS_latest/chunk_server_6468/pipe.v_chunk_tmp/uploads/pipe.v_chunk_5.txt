@@ -1,0 +1,8 @@
+if(Stat == 4'b0100)
+            begin
+                $finish;
+            end
+    end
+
+
+endmodule

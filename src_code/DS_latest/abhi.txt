@@ -1,0 +1,161 @@
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6467
+
+ *  History restored 
+
+v/2024 21:08:04] "GET /storage_used HTTP/1.1" 200 -
+2024-11-27 21:09:25,588 - INFO - 127.0.0.1 - - [27/Nov/2024 21:09:25] "POST /upload HTTP/1.1" 400 -
+2024-11-27 21:09:25,594 - INFO - Uploading file tmp/uploads/master_server.py, size 10292 bytes, 6 chunks
+2024-11-27 21:09:25,595 - ERROR - Failed to upload file: File already exists
+2024-11-27 21:09:25,596 - INFO - 127.0.0.1 - - [27/Nov/2024 21:09:25] "POST /upload HTTP/1.1" 200 -
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/D
+Google_File_System/DS/chunk_server.py", line 33, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 40, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6469
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 189, in <module>
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 33, in start
+    def listen(self):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 40, in listen
+    threading.Thread(target=self.handle_request, args=(client, address)).start()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6469
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 145, in <module>
+    logging.info("Starting Chunk Server on port %d", port_num)
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 31, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 38, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6469
+
+ *  History restored 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6469
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 146, in <module>
+    os.makedirs(base_directory, exist_ok=True)  # Ensure the base directory exists
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 31, in start
+    
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 38, in listen
+    client.settimeout(60)
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+^[[Aabhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6469
+
+ *  History restored 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktabhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6470
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 149, in <module>
+    base_directory = os.path.join(os.getcwd(), f"chunk_server_{port_num}")  # Base directory for this server
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 30, in start
+    
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 37, in listen
+    """Listen for incoming connections and handle each in a separate thread."""
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ ^C
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6470
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 153, in <module>
+    os.makedirs(base_directory, exist_ok=True)  # Ensure the base directory exists
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 34, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 41, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6470
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 156, in <module>
+    chunk_server.start()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 34, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 41, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6470
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 156, in <module>
+    logging.critical("Failed to start chunk server: %s", e)
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 34, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 41, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+
+abhi@abhi-HP-Pavilion-Gaming-Laptop-15-ec1xxx:~/Desktop/Google-File-System-master/Google_File_System/DS$ python3 chunk_server.py 6470
+^CTraceback (most recent call last):
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 154, in <module>
+    chunk_server.start()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 34, in start
+    self.listen()
+  File "/home/abhi/Desktop/Google-File-System-master/Google_File_System/DS/chunk_server.py", line 41, in listen
+    client, address = self.sock.accept()
+  File "/usr/lib/python3.10/socket.py", line 293, in accept
+    fd, addr = self._accept()
+KeyboardInterrupt

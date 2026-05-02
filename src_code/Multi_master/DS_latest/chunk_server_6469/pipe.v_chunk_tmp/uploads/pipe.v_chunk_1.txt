@@ -1,0 +1,84 @@
+    wire signed [63:0] reg_file5;
+    wire signed [63:0] reg_file6;
+    wire signed [63:0] reg_file7;
+    wire signed [63:0] reg_file8;
+    wire signed [63:0] reg_file9;
+    wire signed [63:0] reg_file10;
+    wire signed [63:0] reg_file11;
+    wire signed [63:0] reg_file12;
+    wire signed [63:0] reg_file13;
+    wire signed [63:0] reg_file14;
+
+    // Execute
+    wire [3:0] e_stat;
+    wire [3:0] e_icode;
+    wire e_Cnd;
+    wire signed [63:0] e_valE, e_valA;
+    wire [3:0] e_dstE, e_dstM;
+
+    // Memory 
+    wire [3:0] m_stat;
+    wire [3:0] m_icode;
+    wire signed [63:0] m_valE, m_valM;
+    wire [3:0] m_dstE, m_dstM;
+
+    wire [3:0] Stat;
+
+    // Passing inputs to FETCH stage
+    fetch f(
+        // Inputs from F register
+        .F_predPC(F_predPC),
+
+        // Inputs forwarded from M register
+        .M_icode(M_icode),
+        .M_Cnd(M_Cnd),
+        .M_valA(M_valA),
+
+        // Inputs forwarded from W register
+        .W_icode(W_icode),
+        .W_valM(W_valM),
+
+        // Outputs
+        .f_stat(f_stat),
+        .f_icode(f_icode),
+        .f_ifun(f_ifun),
+        .f_rA(f_rA),
+        .f_rB(f_rB),
+        .f_valC(f_valC),
+        .f_valP(f_valP),
+        .f_predPC(f_predPC)
+            );
+
+    decode d(
+        .clk(clk),
+        
+        // Inputs from D register
+        .D_stat(D_stat),
+        .D_icode(D_icode),
+        .D_ifun(D_ifun),
+        .D_rA(D_rA),
+        .D_rB(D_rB),
+        .D_valC(D_valC),
+        .D_valP(D_valP),
+
+        // Inputs forwarded from execute stage
+        .e_dstE(e_dstE),
+        .e_valE(e_valE),
+
+        // inputs forwarded from M register and memory stage
+        .M_dstE(M_dstE),
+        .M_valE(M_valE),
+        .M_dstM(M_dstM),
+        .m_valM(m_valM),
+
+        // Inputs forwarded from W register
+        .W_dstM(W_dstM),
+        .W_valM(W_valM),
+        .W_dstE(W_dstE),
+        .W_valE(W_valE),
+
+        // Outputs
+        .d_stat(d_stat),
+        .d_icode(d_icode),
+        .d_ifun(d_ifun),
+     

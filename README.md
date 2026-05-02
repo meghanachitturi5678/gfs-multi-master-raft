@@ -7,16 +7,6 @@ Unlike traditional single-master designs, this system enables multiple master no
 
 ---
 
-## Features
-- Multi-master architecture with **Raft-based leader election**
-- Fault-tolerant metadata management
-- Distributed **chunk storage and replication**
-- **Heartbeat mechanism** for node health monitoring
-- Client APIs for file operations (upload, download, list)
-- Scalable and resilient system design
-
----
-
 ## Components
 - **Master Server**: Manages metadata, chunk locations, client requests, and file leasing.
 - **Chunk Servers**: Store and replicate chunks, respond to read/write/replicate requests, and send periodic heartbeats to the master.
